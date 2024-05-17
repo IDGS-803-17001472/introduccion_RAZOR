@@ -1,0 +1,58 @@
+﻿@page
+@model introduccion_RAZOR.Pages.CondicionalesModel
+@{
+    var calificacion = 8;
+}
+
+<h3>Instrucciones condicionales</h3>
+<p>Tu calificacion es de @calificacion</p>
+@if(calificacion>=8)
+{
+    <p>ya pasaste</p>
+}
+else
+{
+    <p>Estás en Recuperación</p>
+}
+<br/>
+
+<h3>Estructuras condicionales else if</h3>
+@{
+    var precio = 25;
+}
+@if(precio>=30)
+{
+    <p>El precio es alto</p>
+}
+else if(precio>20 && precio < 30)
+{
+    <p>el precio es normal</p>
+}
+else
+{
+    <p> el precio es bajo</p>
+}
+<br/>
+<h3>Estructuras condicionales múltiples switch case</h3>
+@{
+    var diaSemana = DateTime.Now.DayOfWeek;
+    var dia = diaSemana.ToString();
+    var mensaje = "";
+
+}
+@switch (dia)
+{
+    case "Monday":
+        mensaje = "este es el primer dia de la semana";
+        break;
+    case "Thursday":
+        mensaje = "sólo falta un día para el viernes";
+        break;
+     case "Friday":
+        mensaje = "Hoy es viernes y el cuerpo......";
+        break;
+    default:
+        mensaje = "Un dia más de la semana";
+        break;
+}
+<p>@mensaje</p>

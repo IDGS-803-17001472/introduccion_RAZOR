@@ -1,0 +1,23 @@
+﻿@page
+@model introduccion_RAZOR.Pages.SintaxisBasicaModel
+@{
+}
+@{
+    var nombre = "Lorena";
+
+}
+
+<p> El valor de la variable nombre es> @nombre
+</p>
+
+<!--Bloque de código-->
+
+@{
+    var bienvenida = "Bienvenido a nuestro sitio";
+    var diaSemana = DateTime.Now.DayOfWeek;
+    var mensajeBienvenida = bienvenida + "Aqui en Leon es " + diaSemana;
+
+}
+<p>
+    El mensaje de bienvenida es: @mensajeBienvenida
+</p>

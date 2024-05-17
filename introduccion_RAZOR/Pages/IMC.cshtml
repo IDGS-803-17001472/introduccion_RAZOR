@@ -1,0 +1,61 @@
+﻿@page
+@model introduccion_RAZOR.Pages.IMCModel
+@{
+}
+<h3>Calcular IMC</h3>
+<form method="post">
+    <p>
+        Peso(kg): <input type="Number" step="0.01" asp-for="peso" />
+    </p>
+    <p>
+        altura(m): <input type="Number" step="0.01" asp-for="altura" />
+    </p>
+    <p><input type="submit" value="Calcular" /></p>
+
+    @if (Model.imc != 0)
+    {
+        @if (Model.imc < 18)
+        {
+            <div>
+                <strong>IMC = @Model.imc   Peso Bajo</strong>
+                <img src="../img1.png" />
+            </div>
+        }
+        @if (Model.imc >= 18 & Model.imc <25)
+        {
+            <div>
+                <strong>IMC = @Model.imc   Peso Normal</strong>
+                <img src="img2.jpg" />
+            </div>
+        }
+        @if (Model.imc >= 25 & Model.imc < 27)
+        {
+            <div>
+                <strong>IMC = @Model.imc   Sobre Peso</strong>
+                <img src="../img3.png" />
+            </div>
+        }
+        @if (Model.imc >= 27 & Model.imc < 30)
+        {
+            <div>
+                <strong>IMC = @Model.imc   Obesidad Grado I</strong>
+                <img src="../img4.jpg" />
+            </div>
+        }
+        if (Model.imc >= 30 & Model.imc < 40)
+        {
+            <div>
+                <strong>IMC = @Model.imc   Obesidad Grado II</strong>
+                <img src="../img5.jpg" />
+
+            </div>
+        }
+        if (Model.imc >= 40)
+        {
+            <div>
+                <strong>IMC = @Model.imc   Obesidad Grado III</strong>
+                <img src="../img6.jpg" />
+            </div>
+        }
+    }
+</form>

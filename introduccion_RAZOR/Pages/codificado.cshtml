@@ -1,0 +1,39 @@
+﻿@page
+@model introduccion_RAZOR.Pages.codificadoModel
+@{
+}
+
+<h1>cifrado cesar</h1>
+
+<form method="post">
+    <div>
+        <label for="originalMessage">mensaje original:</label>
+        <input type="text" id="originalMessage" name="originalMessage" asp-for="OriginalMessage">
+    </div>
+    <div>
+        <label for="EncryptedMessage"> mensaje encriptado:</label>
+        <input type="text" id="EncryptedMessage" name="EncryptedMessage" asp-for="EncryptedMessage">
+    </div>
+    <div>
+        <label for="n">posiciones (n):</label>
+        <input type="number" id="n" name="n">
+    </div>
+    <button type="submit" asp-page-handler="Encrypt" class="btn btn-primary">Encriptar</button>
+    <button type="submit" asp-page-handler="Decrypt" class="btn btn-primary">Desencriptar</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.EncryptedMessage))
+{
+    <div>
+        <h2>mensaje encriptado:</h2>
+        <p>@Model.EncryptedMessage</p>
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(Model.DecryptedMessage))
+{
+    <div>
+        <h2>mensaje desencriptado:</h2>
+        <p>@Model.DecryptedMessage</p>
+    </div>
+}

@@ -1,0 +1,35 @@
+﻿@page
+@model introduccion_RAZOR.Pages.EvaluarExpresionModel
+@{
+}
+
+<h1>Evaluar Expresión (ax + by)^n</h1>
+
+<form method="post">
+    <div>
+        <label for="a">a:</label>
+        <input type="number" step="any" id="a" name="a" value="@Model.a" required />
+    </div>
+    <div>
+        <label for="b">b:</label>
+        <input type="number" step="any" id="b" name="b" value="@Model.b" required />
+    </div>
+    <div>
+        <label for="x">x:</label>
+        <input type="number" step="any" id="x" name="x" value="@Model.x" required />
+    </div>
+    <div>
+        <label for="y">y:</label>
+        <input type="number" step="any" id="y" name="y" value="@Model.y" required />
+    </div>
+    <div>
+        <label for="n">n:</label>
+        <input type="number" id="n" name="n" value="@Model.n" required />
+    </div>
+    <button type="submit">Evaluar</button>
+</form>
+
+@if (Model.Resultado.HasValue)
+{
+    <h2>Resultado: @Model.Resultado.Value</h2>
+}
